@@ -180,7 +180,7 @@ function itsDangerousToGoAlone(){
     mordor.appendChild(frodo);
     mordor.appendChild(sam);
       var mountDoom = document.createElement('div');
-    mountDoom.className = ('id', 'mount-doom');
+    mountDoom.setAttribute('id', 'mount-doom');
   mordor.appendChild(mountDoom);
   // add a div with an id of 'mount-doom' to Mordor
 }
@@ -191,22 +191,27 @@ var gollum, theRing;
 
 function weWantsIt() {
   // Create a div with an id of 'gollum' and add it to Mordor
-    var gollum = document.createElement('div');
-  gollum.className = ('id', 'gollum');
+    gollum = document.createElement('div');
+    gollum.className = ('id', 'gollum');
     theRing = frodo.querySelector('#the-ring');
+    // console.log(theRing);
   gollum.appendChild(theRing);
   // Remove the ring from Frodo and give it to Gollum
   // Move Gollum into Mount Doom
-    mountDoom = mordor.querySelector('#mount-doom');
+    var mountDoom = mordor.querySelector('#mount-doom');
+    // console.log(mountDoom);
   mountDoom.appendChild(gollum);
+  // console.log(gollum);
 }
   // why??????????????? something went wrong nullified.
 weWantsIt();
 
+// console.log(mordor.querySelector('#mount-doom'));
 
 // Part 12
 
 function thereAndBackAgain() {
+  // console.log(gollum);
   gollum.parentElement.removeChild(gollum);
   // remove Gollum and the Ring from the document
   // remove all the baddies from the document
@@ -215,7 +220,7 @@ function thereAndBackAgain() {
     for(var i = 0, len = hobbits.length; i < len; i++){
     hobbitUL.appendChild(hobbits[i]);
   }
-  theShire.appendChild(hobbitUL);
+  shire.appendChild(hobbitUL);
   // Move all the hobbits back to the shire
 }
 thereAndBackAgain();
